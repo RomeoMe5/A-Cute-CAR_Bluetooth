@@ -11,7 +11,7 @@ module UART_BaudRate_generator(
     Clk                   ,
     Rst_n                 ,
     Tick                  ,
-    BaudRate
+    BaudRate 
     );
 
 input           Clk                 ; // Clock input
