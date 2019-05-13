@@ -1,0 +1,84 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+# Date created = 12:53:23  October 05, 2018
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		TOP_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE22F17C6
+set_global_assignment -name TOP_LEVEL_ENTITY TOP
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.0.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:53:23  OCTOBER 05, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION "16.1.0 Lite Edition"
+set_global_assignment -name VERILOG_FILE ../src/UART_rx.v
+set_global_assignment -name VERILOG_FILE ../src/UART_baudrate_generator.v
+set_global_assignment -name VERILOG_FILE ../src/TOP.v
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_R8 -to Clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Clk
+set_location_assignment PIN_R14 -to Rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Rx
+set_location_assignment PIN_A15 -to RxData[7]
+set_location_assignment PIN_A13 -to RxData[6]
+set_location_assignment PIN_B13 -to RxData[5]
+set_location_assignment PIN_A11 -to RxData[4]
+set_location_assignment PIN_D1 -to RxData[3]
+set_location_assignment PIN_F3 -to RxData[2]
+set_location_assignment PIN_B1 -to RxData[1]
+set_location_assignment PIN_L3 -to RxData[0]
+set_location_assignment PIN_N16 -to Tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Tx
+set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_location_assignment PIN_B4 -to L_N
+set_location_assignment PIN_B3 -to L_P
+set_location_assignment PIN_A2 -to R_N
+set_location_assignment PIN_A3 -to R_P
+set_location_assignment PIN_A4 -to Sleep
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to L_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to L_P
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to R_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to R_P
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Sleep
+set_global_assignment -name CDF_FILE output_files/Chain2.cdf
+set_global_assignment -name CDF_FILE output_files/Chain3.cdf
+set_global_assignment -name CDF_FILE output_files/Chain5.cdf
+set_global_assignment -name CDF_FILE Chain2.cdf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
